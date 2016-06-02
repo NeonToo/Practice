@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Output</title>
+</head>
+<body>
+<div>
+    <p>
+        输出对象中值大于2的key的数组
+    </p>
+    <p>
+        var data = {a: 1, b: 2, c: 3, d: 4};
+        <br/>
+        Object.keys(data).filter(function(x){ return (); });
+        <br/>
+        期待输出: ["c", "d"]
+    </p>
+    <Label>Solution: </Label>
+    <p>
+        Object.keys(data).filter(function (x) {
+        <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return data[x] > 2;
+        <br/>
+        });
+    </p>
+</div>
+<script rel="script" type="application/javascript" src="output.js"></script>
+</body>
+</html>
