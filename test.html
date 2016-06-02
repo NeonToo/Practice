@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.name = 'globalName';
+    var myObject = {
+        name: 'sven',
+        getName: function(){
+            return this.name;
+        }
+    };
+    var myObjConstructor = function() {
+        this.name = "sven";
+        this.getName = function() {
+            return this.name;
+        }
+    };
+    var getName = myObject.getName;
+    var obj = new myObjConstructor();
+    console.log(myObject.getName());  // sven
+    console.log( getName() );    // globalName
+    console.log(obj.getName());  // sven
+
+    var foo1 = "11" + 2;
+    var foo = foo1 -"1";
+    console.log(foo1);   // 112
+    console.log(foo);    // 111
+    console.log(typeof foo1);  // string
+    console.log(typeof foo);   // number
+
+    // undefined, 1, undefined, undefined
+    var foo = 1;
+    function main() {
+        console.log(foo);
+        var foo = 2;
+        console.log(this.foo);
+        this.foo = 3;
+    }
+
+    main();
+    new main();
+
+    var arr = [1, [2, 3]];
+    var result = (arr + "").split(",");
+    console.log(result);
+</script>
+</body>
+</html>

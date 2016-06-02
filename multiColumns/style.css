@@ -1,0 +1,10 @@
+#container {
+    width: 100%;
+    -webkit-column-count: 3;
+}
+
+.div {
+    /*margin: 10px;*/
+    height: 30px;
+    background-color: blue;
+}

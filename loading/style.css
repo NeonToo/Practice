@@ -1,0 +1,161 @@
+.container {
+    /*display: -webkit-box;*/
+}
+
+.demo1 {
+    position: absolute;
+    /*top: 30%;*/
+    /*left: 50%;*/
+}
+
+.demo1 > div {
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    display: inline-block;
+    margin: auto -2px;
+    animation: myAnimation 1.8s infinite ease-in-out;
+}
+
+.demo1 > div:nth-child(1) {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.demo1 > div:nth-child(2) {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@keyframes myAnimation {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.5);
+        background-color: coral;
+    }
+
+    25% {
+        opacity: 0.5;
+        transform: scale(0.5);
+        /*background-color: white;*/
+        background-color: rgba(255,127,80,0.5);
+        box-shadow: inset 0 0 3px 2px coral;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    75% {
+        opacity: 0.5;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(0.5);
+        background-color: coral;
+    }
+}
+
+.demo2 {
+    width: 300px;
+    -webkit-box-flex: 2;
+    position: absolute;
+    /*top: 2%;*/
+    left: 10%;
+}
+
+.demo2 > div {
+    width: 1em;
+    height: 4em;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: coral;
+    animation: demo2 1s infinite ease-in-out;
+}
+
+@keyframes demo2 {
+    0% {
+        /*height: 1em;*/
+        transform: scaleY(0.4);
+    }
+
+    25% {
+        /*height: 2em;*/
+        transform: scaleY(0.4);
+    }
+
+    50% {
+        /*height: 4em;*/
+        transform: scaleY(1);
+    }
+
+    75% {
+        /*height: 2em;*/
+        transform: scaleY(0.4);
+    }
+
+    100% {
+        transform: scaleY(0.4);
+        /*height: 1em;*/
+    }
+}
+
+.demo2 > div:nth-child(1) {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.demo2 > div:nth-child(2) {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+.demo3 {
+    width: 3em;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+}
+
+.spinner-container {
+    /*width: 2em;*/
+    /*height: 2em;*/
+    border: 1px solid blue;
+}
+
+.container2 {
+    transform: rotateZ(90deg);
+}
+
+.container1 > div, .container2 > div {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: coral;
+    border-radius: 100%;
+}
+
+.circle1 {
+    top: 0;
+    left: 0;
+}
+
+.circle2 {
+    top: 0;
+    right: 0;
+}
+
+.circle3 {
+    bottom: 0;
+    left: 0;
+}
+
+.circle4 {
+    right: 0;
+    bottom: 0;
+}
+
+

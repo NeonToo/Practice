@@ -1,0 +1,26 @@
+#container {
+    display: -webkit-box;
+}
+
+.div {
+    margin: 10px;
+    height: 30px;
+    background-color: blue;
+    -webkit-box-sizing: border-box;
+}
+
+#div1 {
+    width: 200px;
+    -webkit-box-flex: 2;
+}
+
+#div2 {
+    width: 300px;
+    -webkit-box-flex: 3;
+}
+
+#div3 {
+    width: 200px;
+    -webkit-box-flex: 1;
+}
+
