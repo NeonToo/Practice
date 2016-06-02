@@ -1,0 +1,47 @@
+header {
+    margin-bottom: 5px;
+    padding: 5px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    border: 1px blue solid;
+}
+
+#logo {
+    height: 80px;
+    width: 80px;
+    border: 1px blue solid;
+}
+
+#user {
+    height: 30px;
+    width: 150px;
+    margin-top: 50px;
+    border: 1px blue solid;
+}
+
+#main {
+    padding: 5px auto;
+    display: flex;
+    flex-flow: row;
+}
+
+#content {
+    flex: 1;
+    height: 300px;
+    margin-right: 5px;
+    border: 1px blue solid;
+}
+
+#aside {
+    width: 200px;
+    height: 20px;
+    border: 1px blue solid;
+}
+
+footer {
+    margin-top: 5px;
+    width: 100%;
+    height: 30px;
+    border: 1px blue solid;
+}
