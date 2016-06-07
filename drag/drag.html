@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag Element</title>
+    <style>
+        #container {
+            width: 250px;
+            height: 250px;
+            border: 1px solid orchid;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+</div>
+<img id="img" src="signature.jpeg" width="200" height="200" draggable="true">
+<script>
+    var img = document.getElementById("img");
+    var div = document.getElementById("container");
+
+    img.addEventListener("dragstart", function (event) {
+        var dt = event.dataTransfer;
+        dt.setData("text", event.target.id);
+    });
+
+    div.addEventListener("dragover", function (event) {
+        event.preventDefault();
+    });
+
+    div.addEventListener("drop", function (event) {
+        var dt = event.dataTransfer;
+        var sId = dt.getData("text");
+
+        event.target.appendChild(document.getElementById(sId));
+    });
+</script>
+</body>
+</html>
