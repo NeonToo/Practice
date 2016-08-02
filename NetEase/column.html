@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {
+            border: 1px solid blue;
+            height: 200px;
+        }
+
+        #parent1 {
+            position: relative;
+        }
+
+        #side1 {
+            width: 200px;
+            position: absolute;
+            left: 0;
+        }
+
+        #main1 {
+            margin-left: 210px;
+        }
+
+        #side2 {
+            width: 200px;
+            float: left;
+        }
+
+        #main2 {
+            margin-left: 210px;
+        }
+    </style>
+</head>
+<body>
+<p>
+    两种方式实现：父节点宽度未知。side宽200px，与main间隔10px，main宽度自适应。
+</p>
+<div id="parent1">
+    <div id="side1"></div>
+    <div id="main1"></div>
+</div>
+<br/>
+<div id="parent2">
+    <div id="side2"></div>
+    <div id="main2"></div>
+</div>
+</body>
+</html>
