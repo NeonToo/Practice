@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kill Monster</title>
+</head>
+<body>
+<script type="text/javascript">
+    //    function enterData(inputStr) {
+    //        var monsterNum, originValue;
+    //        var inputData = inputStr.split("\n");
+    //        var originData = inputData[0].split(" ");
+    //        var monsterData = inputData[1].split(" ");
+    //
+    //        monsterNum = originData[0];
+    //        originValue = originData[1];
+    //
+    //        for(var i = 0; i < monsterNum; i++) {
+    //            if(monsterData[i] > originValue) {
+    //                originValue = parseInt(originValue, 10) + parseInt(gcd(monsterData[i],originValue), 10);
+    //            } else {
+    //                originValue = parseInt(originValue, 10) + parseInt(monsterData[i], 10);
+    //            }
+    //        }
+    //        console.log(originValue);
+    //    }
+    //
+    //    function gcd(m, n){
+    //        if (n == 0)
+    //            return m;
+    //        else
+    //            return gcd(n, m%n);
+    //    }
+
+    var monsterNum, originValue;
+    var index = 1;
+
+    function enterData(inputStr) {
+        var lineData = inputStr.split("\n");
+
+        while (index <= 2) {
+            if (index === 1) {
+                var line1 = lineData[0].split(" ");
+                monsterNum = parseInt(line1[0], 10);
+                originValue = parseInt(line1[1], 10);
+            } else {
+                var line2 = lineData[1].split(" ");
+                for (var i = 0; i < monsterNum; i++) {
+                    var monsterValue = parseInt(line2[i], 10);
+
+                    if (monsterValue > originValue) {
+                        originValue += gcd(monsterValue, originValue);
+                    } else {
+                        originValue += monsterValue;
+                    }
+                }
+                console.log(originValue);
+            }
+            index++;
+        }
+    }
+
+    function gcd(m, n) {
+        if (n == 0) {
+            return m;
+        } else {
+            return gcd(n, m % n);
+        }
+    }
+
+    enterData("3 50\n50 105 200");
+</script>
+</body>
+</html>

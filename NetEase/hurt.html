@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hurt</title>
+</head>
+<body>
+<script type="text/javascript">
+    function enterData(inputData) {
+        var array = inputData.split(" ");
+        var maxRadius = parseInt(array[0], 10);
+        var x0 = parseInt(array[7], 10), y0 = parseInt(array[8], 10);
+        var hurt = 0;
+
+        for (var i = 1; i < 7; i += 2) {
+            var x = parseInt(array[i], 10);
+            var y = parseInt(array[i + 1], 10);
+
+            if (Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) <= maxRadius) {
+                hurt++;
+            }
+        }
+
+        console.log(hurt + "x");
+
+    }
+
+    enterData("29 4 -1 18 15 3 -4 15 0");
+</script>
+</body>
+</html>
