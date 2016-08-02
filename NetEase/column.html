@@ -31,6 +31,70 @@
         #main2 {
             margin-left: 210px;
         }
+
+        #parent3 {
+            position: relative;
+        }
+
+        #left1, #right1 {
+            width: 200px;
+            position: absolute;
+        }
+
+        #left1 {
+            left: 0;
+        }
+
+        #right1 {
+            right: 0;
+        }
+
+        #center1 {
+            margin: auto 210px;
+        }
+
+        #left2, #right2 {
+            width: 200px;
+        }
+
+        #left2 {
+            float: left;
+        }
+
+        #right2 {
+            float: right;
+        }
+
+        #center2 {
+            margin: auto 210px;
+        }
+
+        /*#parent5 {*/
+        /*display: -webkit-flex;*/
+        /*display: flex;*/
+        /*}*/
+
+        /*#left3, #right3 {*/
+        /*width: 200px;*/
+        /*}*/
+
+        /*#center3 {*/
+        /*flex: 1;*/
+        /*}*/
+
+        #parent6 {
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        #center4 {
+            width: 800px;
+            margin: auto 10px;
+        }
+
+        #left4, #right4 {
+            flex: 1;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +109,33 @@
 <div id="parent2">
     <div id="side2"></div>
     <div id="main2"></div>
+</div>
+<p>
+    父节点宽度未知。三列布局，左右定宽，中间宽度自适应
+</p>
+<div id="parent3">
+    <div id="left1"></div>
+    <div id="right1"></div>
+    <div id="center1"></div>
+</div>
+<br/>
+<div id="parent4">
+    <div id="left2"></div>
+    <div id="right2"></div>
+    <div id="center2"></div>
+</div>
+<!--<div id="parent5">-->
+<!--<div id="left3"></div>-->
+<!--<div id="center3"></div>-->
+<!--<div id="right3"></div>-->
+<!--</div>-->
+<p>
+    父节点宽度未知。三列布局，中间定宽，左右宽度自适应
+</p>
+<div id="parent6">
+    <div id="left4"></div>
+    <div id="center4"></div>
+    <div id="right4"></div>
 </div>
 </body>
 </html>
