@@ -95,6 +95,29 @@
         #left4, #right4 {
             flex: 1;
         }
+
+        #first {
+            float: left;
+            width: 100px;
+            height: 150px
+        }
+
+        #second {
+            clear: left;
+            float: left;
+            margin-top: 10px;
+            width: 100px;
+            height: 150px
+        }
+
+        #third {
+            zoom: 1;
+            width: 200px;
+            margin-left: 110px;
+            _margin-left: 107px;
+            height: 310px
+        }
+
     </style>
 </head>
 <body>
@@ -137,5 +160,13 @@
     <div id="center4"></div>
     <div id="right4"></div>
 </div>
+<pre>
+    左边两个div上下排列，右边一个DIV
+    主要考虑几个问题：1. IE6 的 3 像素 BUG；2. 清除浮动；
+</pre>
+<div id="first"></div>
+<div id="second"></div>
+<div id="third"></div>
+<br/>
 </body>
 </html>
