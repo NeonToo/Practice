@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var h = 100;
+    var maxLost = Math.ceil(Math.sqrt(h));
+    var totalLost = maxLost + Math.pow(maxLost, 2);
+
+    while(totalLost > h) {
+        maxLost--;
+        totalLost = maxLost + Math.pow(maxLost, 2);
+    }
+
+    console.log(maxLost);
+</script>
+</body>
+</html>

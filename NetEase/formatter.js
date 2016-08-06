@@ -4,38 +4,42 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-var monsterNum, originValue;
-var index = 1;
-
 rl.on('line', function (line) {
-    var inputData = line.split(" ");
-
-    if (index === 1) {
-        monsterNum = parseInt(inputData[0], 10);
-        originValue = parseInt(inputData[1], 10);
-        index++;
-    } else {
-        for (var i = 0; i < monsterNum; i++) {
-            var monsterValue = parseInt(inputData[i], 10);
-
-            if (monsterValue > originValue) {
-                originValue += gcd(monsterValue, originValue);
-            } else {
-                originValue += monsterValue;
-            }
-        }
-        console.log(originValue);
+    if (!line) {
+        console.log(-1);
+        return;
     }
+
+    if (line.length === 0) {
+        console.log(-1);
+        return;
+    }
+
+    var n = +line.split(" ")[0];
+
+    if (n < 1 || n > 10e6) {
+        console.log(-1);
+        return;
+    }
+
+    var nStep = -1;
+    var nLeft = 0, nRight = 0;
+    for(var i = 1; fibonacci(i) <= n; i++) {
+        if(fibonacci(i + 1) >= n) {
+            nLeft = n - fibonacci(i);
+            nRight = fibonacci(i + 1) - n;
+            nStep = nLeft > nRight ? nRight : nLeft;
+            break;
+        }
+    }
+
+    console.log(nStep);
 });
 
-function gcd(a, b) {
-    var tmp;
-
-    while (b) {
-        tmp = b;
-        b = a % b;
-        a = tmp;
+function fibonacci(n) {
+    if(n === 1 || n === 2) {
+        return 1;
+    } else {
+        return fibonacci(n - 2) + fibonacci(n - 1);
     }
-
-    return a;
 }
