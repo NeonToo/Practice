@@ -6,16 +6,31 @@
 </head>
 <body>
 <script type="text/javascript">
-    var h = 100;
-    var maxLost = Math.ceil(Math.sqrt(h));
-    var totalLost = maxLost + Math.pow(maxLost, 2);
+    function fizzBuzz(num) {
+        var result = "";
 
-    while(totalLost > h) {
-        maxLost--;
-        totalLost = maxLost + Math.pow(maxLost, 2);
+        switch(true) {
+            case isNaN(num):
+                result = false;
+                break;
+            case num % 3 === 0 || num % 5 === 0:
+                result = "fizzbuzz";
+                break;
+            case num % 3 === 0:
+                result = "fizz";
+                break;
+            case num % 5 === 0:
+                result = "buzz";
+                break;
+            default:
+                result = num;
+                break;
+        }
+
+        return result;
     }
 
-    console.log(maxLost);
+    console.log(fizzBuzz(15));
 </script>
 </body>
 </html>
