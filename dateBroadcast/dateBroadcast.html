@@ -6,22 +6,43 @@
 </head>
 <body>
 <script>
-    var now = new Date(),
-            num_array = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
-    var yearStr = "";
-    var dateCH = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日 " + "星期" + now.getDay() + " " + now.getHours() + "点" + now.getMinutes() + "分";
+    var oDate = new Date(),
+            num_array = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+//    var dateCH = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日 " + "星期" + now.getDay() + " " + now.getHours() + "点" + now.getMinutes() + "分";
+    var year = oDate.getFullYear().toString(),
+            month = oDate.getMonth() + 1,
+            date = oDate.getDate(),
+            hour = oDate.getHours(),
+            minute = oDate.getMinutes(),
+            day = oDate.getDay();
+    var sYear = [];
 
-    now = dateCH.replace(/(\d)年(\d)月(\d)日\s星期(\d)\s(\d)点(\d)分/, function(item, year, month, date, week, hour, minute) {
-        yearStr = (year + "").split("");
+    // deal with year
+    for(var i = 0, len = year.length; i < len; i++) {
+        sYear[i] = num_array[+year[i]];
+    }
 
-        for(var i = 0, len = yearStr.length; i < len; i++) {
-            yearStr[i] = num_array[yearStr[i]];
+    // deal with month, date, day, hour, minute
+    function formatTime(str) {
+        var sResult = "";
+
+        if(str < 10) {
+            sResult = num_array[str];
+        } else if(str === 10) {
+            sResult = "十";
+        } else if(str < 20) {
+            sResult = "十" + num_array[str % 10];
+        } else if(str % 10 === 0) {
+            sResult = num_array[Math.ceil(str / 10) - 1] + "十";
+        } else {
+            sResult = num_array[Math.ceil(str / 10) - 1] + "十" + num_array[str % 10];
         }
 
-    });
+        return sResult;
+    }
 
-    console.log(yearStr);
-    console.log(now);
+
+    console.log(sYear.join("") + "年" + formatTime(month) + "月" + formatTime(date) + "日 星期" + formatTime(day) + " " + formatTime(hour) + "点" + formatTime(minute) + "分");
 </script>
 </body>
 </html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>给一个元素绑定多个handler，一个捕获，一个冒泡</title>
+    <style>
+        div {
+            border: 1px solid red;
+        }
+
+        #one {
+            width: 100px;
+            height: 100px;
+        }
+        #two {
+            width: 80px;
+            height: 80px;
+        }
+        #three {
+            width: 60px;
+            height: 60px;
+        }
+        #four {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id='one'>
+    <div id='two'>
+        <div id='three'>
+            <div id='four'>
+            </div>
+        </div>
+    </div>
+</div>
+<script type='text/javascript'>
+    var one=document.getElementById('one');
+    var two=document.getElementById('two');
+    var three=document.getElementById('three');
+    var four=document.getElementById('four');
+
+    // DOM2
+//    one.addEventListener('click',function(){
+//        console.log('one');
+//    },true);
+//    two.addEventListener('click',function(){
+//        console.log('two,capture');
+//    },true);
+//    two.addEventListener('click',function(){
+//        console.log('two,bubble');
+//    },false);
+//    three.addEventListener('click',function(){
+//        console.log('three,bubble');
+//    },true);
+//    four.addEventListener('click',function(){
+//        console.log('four');
+//    },true);
+
+    // DOM2, For IE8 and below
+//    one.attachEvent('onclick',function(){
+//        console.log('one');
+//    });
+//    two.attachEvent('onclick',function(){
+//        console.log('two,bubble');
+//    });
+//    two.attachEvent("onclick", function(){
+//        console.log('two,capture');
+//    });
+//    three.attachEvent('onclick',function(){
+//        console.log('three,bubble');
+//    });
+//    four.attachEvent('onclick',function(){
+//        console.log('four');
+//    });
+
+    // DOM0
+    one.onclick = function(){
+        console.log('one');
+    };
+    two.onclick = function(){
+        console.log('two 1st');
+    };
+    two.onclick = function(){
+        console.log('two 2nd');
+    };
+    two.onclick = function(){
+        console.log('two 3rd');
+    };
+    three.onclick = function(){
+        console.log('three');
+    };
+    four.onclick = function(){
+        console.log('four');
+    };
+</script>
+</body>
+</html>
