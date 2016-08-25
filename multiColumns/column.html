@@ -69,22 +69,24 @@
             margin: auto 210px;
         }
 
-        /*#parent5 {*/
-        /*display: -webkit-flex;*/
-        /*display: flex;*/
-        /*}*/
+        #parent5 {
+            display: -webkit-flex;
+            display: flex;
+        }
 
-        /*#left3, #right3 {*/
-        /*width: 200px;*/
-        /*}*/
+        #left3, #right3 {
+            width: 200px;
+            margin: auto 10px;
+        }
 
-        /*#center3 {*/
-        /*flex: 1;*/
-        /*}*/
+        #center3 {
+            flex: 1;
+        }
 
         #parent6 {
             display: -webkit-flex;
             display: flex;
+            justify-content: space-between;
         }
 
         #center4 {
@@ -147,11 +149,12 @@
     <div id="right2"></div>
     <div id="center2"></div>
 </div>
-<!--<div id="parent5">-->
-<!--<div id="left3"></div>-->
-<!--<div id="center3"></div>-->
-<!--<div id="right3"></div>-->
-<!--</div>-->
+<br/>
+<div id="parent5">
+    <div id="left3"></div>
+    <div id="center3"></div>
+    <div id="right3"></div>
+</div>
 <p>
     父节点宽度未知。三列布局，中间定宽，左右宽度自适应
 </p>
